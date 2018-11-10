@@ -6,8 +6,9 @@ Para o teste, pedimos que seja entrega em até 5 dias, mas caso precise de mais 
 
 O layout do desafio a ser desenvolvido está em /layout
 
-## Desafio:
+## Desafio
 Desenvolver a página do layout, utilizando as seguintes tecnologias:
+
 - HTML 5
 - CSS 3
 - JavaScript ES6/ES7
