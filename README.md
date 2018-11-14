@@ -5,6 +5,7 @@ Para o teste, pedimos que seja entrega em até 5 dias, mas caso precise de mais 
 ## Layout
 
 O layout do desafio a ser desenvolvido está em /references/layout
+
 Analogamente, os assets econtram-se em /references/assets
 
 ## Desafio
@@ -18,9 +19,11 @@ Desenvolver a página do layout, utilizando as seguintes tecnologias:
 - Jest
 
 ### API
-A API a ser consumida pela aplicação está descrita em: http://challenge.skyhub.com.br/docs
+A API a ser consumida pela aplicação está descrita em http://challenge.skyhub.com.br/docs
+
 Para iniciar o desenvolvimento, basta criar uma conta a partir da própria documentação:
-- Operação http://challenge.skyhub.com.br/docs/#/Contas/accounts_create
+
+- Operação [Nova Conta](http://challenge.skyhub.com.br/docs/#/Contas/accounts_create)
 - Clique em "Try it out"
 - Preencha seu nome
 - E clique em "Execute"
