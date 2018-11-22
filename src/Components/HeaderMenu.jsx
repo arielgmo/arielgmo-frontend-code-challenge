@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export default class RootContainer extends Component {
+export default class HeaderMenu extends Component {
   render() {
     return (
       <div>
-        Hello World!
+        HeaderMenu
       </div>
     )
   }
