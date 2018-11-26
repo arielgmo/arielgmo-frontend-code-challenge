@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import logoImg from '../../references/assets/logo.png';
+import './HeaderMenu.css';
 
-export default class HeaderMenu extends Component {
-  render() {
-    return (
-      <div>
-        HeaderMenu
-      </div>
-    )
-  }
-}
+const HeaderMenu = () => (
+  <div className="menu-container">
+    <div className="logo-container">
+      <img src={logoImg} alt="logo" />
+    </div>
+  </div>
+);
+
+export default HeaderMenu;
