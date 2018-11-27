@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import AddNewReportContainer from './AddNewReportContainer';
+import ReportListContainer from './ReportListContainer';
 import { fetchReports } from '../actions/reportActions';
 
 class MainContentContainer extends Component {
@@ -22,7 +24,8 @@ class MainContentContainer extends Component {
   render() {
     return (
       <div>
-        MainContentContainer
+        <AddNewReportContainer />
+        <ReportListContainer />
       </div>
     );
   }
