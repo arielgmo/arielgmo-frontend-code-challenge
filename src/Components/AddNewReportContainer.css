@@ -1,0 +1,101 @@
+.add-report-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.add-report-title-container {
+  display: flex;
+  width: 30%;
+  align-content: center;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.add-report-title-text {
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.add-report-form-component {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px ridge lightgray;
+  border-radius: 10px;
+  padding: 25px 10px 30px 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.form-field-container {
+  width: 22%;
+}
+
+.buttons-container {
+  width: 22%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-field-title {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.platforms-select {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+
+.date-input {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+
+.clean-filter-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.clean-filter-text {
+  color: red;
+  margin-left: 5px;
+}
+
+.add-report-button {
+  background-color: rgb(0, 144, 211);;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+}
+
+.icon-red {
+  fill: red;
+}
+
+.icon-light-blue {
+  fill: rgb(0, 144, 211);
+}

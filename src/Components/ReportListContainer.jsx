@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import PropTypes from 'prop-types';
+import { deleteReport } from '../actions/reportActions';
 import CheckmarkIcon from '../../references/assets/checkmark.svg';
 import CrossIcon from '../../references/assets/cross.svg';
 import DownloadIcon from '../../references/assets/download.svg';
@@ -16,7 +18,7 @@ const getDataColumn = reports => (
     </div>
     {
       reports.map(report => (
-        <div className="cell-container">
+        <div key={`data-${report.id}`} className="cell-container">
           {moment(report.filters.start_date).format('DD/MM/YYYY')}
         </div>
       ))
@@ -31,7 +33,7 @@ const getDetailsColumn = reports => (
     </div>
     {
       reports.map(report => (
-        <div className="cell-container">
+        <div key={`details-${report.id}`} className="cell-container">
           {report.name}
         </div>
       ))
@@ -48,7 +50,7 @@ const getStatusColumn = reports => (
       reports.map((report) => {
         if (report.status === 'Created') {
           return (
-            <div className="cell-container">
+            <div key={`status-${report.id}`} className="cell-container">
               <CheckmarkIcon className="icon-green" width={20} height={20} />
               <p>Concluído</p>
             </div>
@@ -74,7 +76,7 @@ const getDownloadButtonColumn = reports => (
       reports.map((report) => {
         if (report.status === 'Created') {
           return (
-            <div className="icon-cell-container">
+            <div key={`download-button-${report.id}`} className="icon-cell-container">
               <DownloadIcon className="icon-light-blue" width={20} height={20} />
             </div>
           );
@@ -85,15 +87,15 @@ const getDownloadButtonColumn = reports => (
   </div>
 );
 
-const getDeleteButtonColumn = reports => (
+const getDeleteButtonColumn = (reports, onDeleteReport) => (
   <div className="delete-column-container">
     <div className="icon-column-title">
       EXCLUIR
     </div>
     {
       reports.map(report => (
-        <div className="icon-cell-container">
-          <button className="delete-button" type="button" onClick={() => console.log(`Remove Action for ${report.name}`)}>
+        <div key={`delete-button-${report.id}`} className="icon-cell-container">
+          <button className="delete-button" type="button" onClick={() => onDeleteReport(report.id)}>
             <TrashIcon className="icon-red" width={20} height={20} />
           </button>
         </div>
@@ -102,32 +104,61 @@ const getDeleteButtonColumn = reports => (
   </div>
 );
 
+const getTitle = () => (
+  <div className="report-list-title-container">
+    <ToDoIcon className="icon-light-blue" width={28} height={28} />
+    <div className="report-list-title-text">
+      Histórico de relatórios
+    </div>
+  </div>
+);
+
 const ReportListContainer = (props) => {
   const {
     reportReducer,
+    onDeleteReport,
   } = props;
 
   return (
-    <div>
-      <div className="report-list-title-container">
-        <ToDoIcon className="icon-light-blue" width={28} height={28} />
-        <div className="report-list-title-text">
-          Histórico de relatórios
-        </div>
-      </div>
-      <div className="report-list-container">
+    <div className="report-list-container">
+      {getTitle()}
+      <div className="report-list-table-container">
         {getDataColumn(reportReducer)}
         {getDetailsColumn(reportReducer)}
         {getStatusColumn(reportReducer)}
         {getDownloadButtonColumn(reportReducer)}
-        {getDeleteButtonColumn(reportReducer)}
+        {getDeleteButtonColumn(reportReducer, onDeleteReport)}
       </div>
     </div>
   );
+};
+
+ReportListContainer.propTypes = {
+  reportReducer: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    status: PropTypes.string,
+    createAt: PropTypes.string,
+    account: PropTypes.string,
+    filters: PropTypes.shape({
+      start_date: PropTypes.string,
+      end_date: PropTypes.string,
+      platform_id: PropTypes.string,
+    }),
+  })),
+  onDeleteReport: PropTypes.func,
+};
+
+ReportListContainer.defaultProps = {
+  reportReducer: [],
+  onDeleteReport: () => {},
 };
 
 export default connect(
   ({ reportReducer }) => ({
     reportReducer,
   }),
+  {
+    onDeleteReport: deleteReport,
+  },
 )(ReportListContainer);
