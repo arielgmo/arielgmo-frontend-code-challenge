@@ -75,11 +75,11 @@ Não esqueça de ensinar como instalamos e rodamos seu projeto em nosso ambiente
 
 #### Instalação
 
-1 - Usar git para clonar o projeto em sua maquina.
-2 - Instalar node.js caso não tenha na sua maquina, recomendo algum console tambem.
-3 - Acessar o projeto de dentro do console e digitar o comando yarn install
-4 - Usar o comando yarn start para iniciar o server(lembrando que no webpack ele está programado pra abrir na porta 8080, então a porta deve estar livre ou a config deve ser mudada no webpack)
-5 - Assim que o server tiver sido iniciado acessar atráves de um browser a html: http://localhost:8080/, apesar que ela tambem deve abrir automaticamente quando o servidor local estiver pronto.
+- Usar git para clonar o projeto em sua maquina.
+- Instalar node.js caso não tenha na sua maquina, recomendo algum console tambem.
+- Acessar o projeto de dentro do console e digitar o comando yarn install
+- Usar o comando yarn start para iniciar o server(lembrando que no webpack ele está programado pra abrir na porta 8080, então a porta deve estar livre ou a config deve ser mudada no webpack)
+- Assim que o server tiver sido iniciado acessar atráves de um browser a html: http://localhost:8080/, apesar que ela tambem deve abrir automaticamente quando o servidor local estiver pronto.
 
 Extras:
 - Você pode gerar uma versão de prod com yarn build, que vai gerar um bundle só no /dist
